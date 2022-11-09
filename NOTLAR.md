@@ -42,8 +42,10 @@ https://gorm.io/docs/index.html
 
 
 
-//Projeye giriş
--Go Modülü oluşturdum.Gerekli packageleri yükledim.Bir tane resources dosyası oluşturup indirdigim admin template dosyasını içine atıyorum.Admin tarafı için gerekli dosyaları alacagım icin bir tane admin dosyası oluşturuyorum.admin dosyası içine ise assets dosyası oluşturup içine resources klasörü içine atmış oldugum (css,js,vendor,img,scss)dosyalarını atıyorum.Sırasıyla 
+//Projeye 
+-Go Modülü oluşturdum.Gerekli packageleri yükledim.Bir tane resources dosyası oluşturup indirdigim admin template dosyasını içine atıyorum.Admin tarafı için gerekli dosyaları alacagım icin bir tane admin dosyası oluşturuyorum.Sırasıyla admin klasörü altında dosyalarımı oluşturuyorum(assets,models,views,controllers,helpers,)Admin dosyası içinde oluşturdugum assets dosyası içine resources klasörü içine atmış oldugum (css,js,vendor,img,scss)dosyalarını atıyorum.Views klasörü içine bir index sayfası tanımlayıp resource klasöründe bulunan blank.html dosyasının içeriğini kopyalayıp link,css ve js kodlarımın pathlerini düzeltiyorum.Controllers icinde oluşturdugum Dashboard.go controleri dosyası oluşturup gerekli kontrolleri yapıyorum.
+-Config dosyası oluşturup routes.go klasörü içinde rotalarımı ayarlıyorum.
+-main.go dosyamda serveri dinleyorum(port bilgisi ve router bilgisi ile).
 
 
 
