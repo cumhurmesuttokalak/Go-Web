@@ -43,9 +43,10 @@ https://gorm.io/docs/index.html
 
 
 //Projeye 
--Go Modülü oluşturdum.Gerekli packageleri yükledim.Bir tane resources dosyası oluşturup indirdigim admin template dosyasını içine atıyorum.Admin tarafı için gerekli dosyaları alacagım icin bir tane admin dosyası oluşturuyorum.Sırasıyla admin klasörü altında dosyalarımı oluşturuyorum(assets,models,views,controllers,helpers,)Admin dosyası içinde oluşturdugum assets dosyası içine resources klasörü içine atmış oldugum (css,js,vendor,img,scss)dosyalarını atıyorum.Views klasörü içine bir index sayfası tanımlayıp resource klasöründe bulunan blank.html dosyasının içeriğini kopyalayıp link,css ve js kodlarımın pathlerini düzeltiyorum.Controllers icinde oluşturdugum Dashboard.go controleri dosyası oluşturup gerekli kontrolleri yapıyorum.
+-Go Modülü oluşturdum.Gerekli packageleri yükledim.Bir tane resources dosyası oluşturup indirdigim admin template dosyasını içine atıyorum.Admin tarafı için gerekli dosyaları alacagım icin bir tane admin dosyası oluşturuyorum.Sırasıyla admin klasörü altında dosyalarımı oluşturuyorum(assets,models,views,controllers,helpers,)Admin dosyası içinde oluşturdugum assets dosyası içine resources klasörü içine atmış oldugum (css,js,vendor,img,scss)dosyalarını atıyorum.Views klasörü içine bir index sayfası tanımlayıp resource klasöründe bulunan blank.html dosyasının içeriğini kopyalayıp link,css ve js kodlarımın pathlerini düzeltiyorum.Controllers icinde oluşturdugum Dashboard.go controleri dosyası oluşturup gerekli kontrolleri yapıyorum.Dashboard fonksiyonumda ParseFiles yapacagım html dosyalarının yollarını uzun vermemek için helpers klasörü altında bu pathlerimi yakalayan bir fonksiyon yazıp path yerine o fonksiyonumu cagırıyorum.
 -Config dosyası oluşturup routes.go klasörü içinde rotalarımı ayarlıyorum.
 -main.go dosyamda serveri dinleyorum(port bilgisi ve router bilgisi ile).
+-admin template parçalama işlemlerimi yapıyorum.html dosyalarımın hepsine define ile değişkene atayıp index sayfamda template değişken ismi ile çağırıyorum.
 
 
 
