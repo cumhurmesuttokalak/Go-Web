@@ -12,7 +12,7 @@ func Routes() *httprouter.Router {
 
 	//Admin routes
 	r.GET("/admin", admin.Dashboard{}.Index)
-
+	r.GET("/admin/yeni-ekle", admin.Dashboard{}.NewItem)
 	//ServeFiles
 	r.ServeFiles("/admin/assets/*filepath", http.Dir("admin/assets"))
 	return r

@@ -48,7 +48,7 @@ https://gorm.io/docs/index.html
 -main.go dosyamda serveri dinleyorum(port bilgisi ve router bilgisi ile).
 -admin template parçalama işlemlerimi yapıyorum.html dosyalarımın hepsine define ile değişkene atayıp index sayfamda template değişken ismi ile çağırıyorum.
 
-
+-Db bağlantısı,post model dosyası,post crud işlemleri.
 
 
 
