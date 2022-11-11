@@ -10,16 +10,15 @@ type Post struct {
 	CategoryID                                     int
 }
 
-func CreatePost() {
-	Database.Db.Create(&Post{Title: "title3", Slug: "slug3", Description: "dec3", Content: "con", Picture_url: "url", CategoryID: 54})
+func (post Post) CreatePost() {
+	Database.Db.Create(&post)
 }
-func GetAllPosts(where ...interface{}) []Post {
+func (post Post) GetAllPosts(where ...interface{}) []Post {
 	var posts []Post
 	Database.Db.Find(&posts, where...)
 	return posts
 }
-func GetSinglePost(where ...interface{}) Post {
-	var post Post
+func (post Post) GetSinglePost(where ...interface{}) Post {
 	Database.Db.First(&post, where...)
 	return post
 }
@@ -33,7 +32,6 @@ func UpdatesPost(data Post) {
 	Database.Db.First(&post, 1)
 	Database.Db.Model(&post).Updates(data)
 }
-func DeletePost() {
-	var post Post
+func (post Post) DeletePost() {
 	Database.Db.Delete(&post, post.ID)
 }

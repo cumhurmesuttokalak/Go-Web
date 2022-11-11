@@ -60,3 +60,4 @@ https://gorm.io/docs/index.html
 go get  github.com/julienschmidt/httprouter
 go get -u gorm.io/gorm
 gorm.io/driver/mysql
+github.com/gosimple/slug
