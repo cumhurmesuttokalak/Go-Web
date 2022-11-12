@@ -27,8 +27,7 @@ func UpdatePost(column string, value interface{}) {
 	Database.Db.First(&post, 1)
 	Database.Db.Model(&post).Update(column, value)
 }
-func UpdatesPost(data Post) {
-	var post Post
+func (post Post) UpdatesPost(data Post) {
 	Database.Db.First(&post, 1)
 	Database.Db.Model(&post).Updates(data)
 }
