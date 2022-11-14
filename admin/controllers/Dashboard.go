@@ -23,6 +23,7 @@ func (dashboard Dashboard) Index(w http.ResponseWriter, r *http.Request, params 
 	}
 	data := make(map[string]interface{})
 	data["Posts"] = models.Post{}.GetAllPosts()
+	data["Alert"] = helpers.GetAlert(w, r)
 	tmp.ExecuteTemplate(w, "index", data)
 }
 func (dashboad Dashboard) NewItem(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
@@ -64,6 +65,7 @@ func (dashboard Dashboard) Add(w http.ResponseWriter, r *http.Request, params ht
 		Content:     content,
 		Picture_url: "uploads/" + header.Filename,
 	}.CreatePost()
+	helpers.SetAlert(w, r, "Kayıt Başarıyla Eklendi")
 	http.Redirect(w, r, "/admin", http.StatusSeeOther)
 }
 func (dashboard Dashboard) Edit(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
