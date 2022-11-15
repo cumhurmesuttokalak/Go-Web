@@ -17,6 +17,12 @@ func Routes() *httprouter.Router {
 	r.GET("/admin/edit/:id", admin.Dashboard{}.Edit)
 	r.GET("/admin/delete/:id", admin.Dashboard{}.Delete)
 	r.POST("/admin/update/:id", admin.Dashboard{}.Update)
+
+	//Userops routes
+	r.GET("/admin/login", admin.User{}.Index)
+	r.POST("/admin/do_login", admin.User{}.Login)
+	r.GET("/admin/logout", admin.User{}.Logout)
+
 	//ServeFiles
 	r.ServeFiles("/admin/assets/*filepath", http.Dir("admin/assets"))
 	r.ServeFiles("/uploads/*filepath", http.Dir("uploads"))
