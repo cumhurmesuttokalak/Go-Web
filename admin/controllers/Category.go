@@ -14,6 +14,9 @@ import (
 type Category struct{}
 
 func (category Category) Index(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	if !helpers.CheckUser(w, r) {
+		return
+	}
 	tmp, err := template.ParseFiles(helpers.Include("categories/list")...)
 	if err != nil {
 		fmt.Println(err)
@@ -24,6 +27,9 @@ func (category Category) Index(w http.ResponseWriter, r *http.Request, params ht
 	tmp.ExecuteTemplate(w, "index", data)
 }
 func (category Category) Add(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	if !helpers.CheckUser(w, r) {
+		return
+	}
 	categoryTitle := r.FormValue("category-title")
 	categorySlug := slug.Make(categoryTitle)
 
@@ -32,6 +38,9 @@ func (category Category) Add(w http.ResponseWriter, r *http.Request, params http
 	http.Redirect(w, r, "/admin/categories", http.StatusSeeOther)
 }
 func (category Category) Delete(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	if !helpers.CheckUser(w, r) {
+		return
+	}
 	kategori := models.Category{}.GetSingleCategory(params.ByName("id"))
 	kategori.DeleteCategory()
 	helpers.SetAlert(w, r, "Kayıt Silindi")
