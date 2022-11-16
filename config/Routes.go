@@ -23,6 +23,10 @@ func Routes() *httprouter.Router {
 	r.POST("/admin/do_login", admin.User{}.Login)
 	r.GET("/admin/logout", admin.User{}.Logout)
 
+	//Categories routes
+	r.GET("/admin/categories", admin.Category{}.Index)
+	r.POST("/admin/categories/add", admin.Category{}.Add)
+	r.GET("/admin/categories/delete/:id", admin.Category{}.Delete)
 	//ServeFiles
 	r.ServeFiles("/admin/assets/*filepath", http.Dir("admin/assets"))
 	r.ServeFiles("/uploads/*filepath", http.Dir("uploads"))

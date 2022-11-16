@@ -19,6 +19,6 @@ func DBConn() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	db.AutoMigrate(&Post{}, User{})
+	db.AutoMigrate(&Post{}, User{}, Category{})
 	Database = DBInstance{Db: db}
 }

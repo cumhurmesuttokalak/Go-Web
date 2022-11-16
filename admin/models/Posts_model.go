@@ -22,8 +22,7 @@ func (post Post) GetSinglePost(where ...interface{}) Post {
 	Database.Db.First(&post, where...)
 	return post
 }
-func UpdatePost(column string, value interface{}) {
-	var post Post
+func (post Post) UpdatePost(column string, value interface{}) {
 	Database.Db.First(&post, 1)
 	Database.Db.Model(&post).Update(column, value)
 }
