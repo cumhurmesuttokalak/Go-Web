@@ -20,7 +20,11 @@ func (dashboard Dashboard) Index(w http.ResponseWriter, r *http.Request, params 
 	if !helpers.CheckUser(w, r) {
 		return
 	}
-	tmp, err := template.ParseFiles(helpers.Include("dashboard/list")...)
+	tmp, err := template.New("index").Funcs(template.FuncMap{
+		"getCategory": func(categoryID int) string {
+			return models.Category{}.GetSingleCategory(categoryID).Title
+		},
+	}).ParseFiles(helpers.Include("dashboard/list")...)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -37,7 +41,9 @@ func (dashboad Dashboard) NewItem(w http.ResponseWriter, r *http.Request, params
 	if err != nil {
 		fmt.Println(err)
 	}
-	tmp.ExecuteTemplate(w, "index", nil)
+	data := make(map[string]interface{})
+	data["Categories"] = models.Category{}.GetAllCategories()
+	tmp.ExecuteTemplate(w, "index", data)
 }
 
 // formdan gelen verileri db ye kaydetme
@@ -87,6 +93,7 @@ func (dashboard Dashboard) Edit(w http.ResponseWriter, r *http.Request, params h
 	}
 	data := make(map[string]interface{})
 	data["Post"] = models.Post{}.GetSinglePost(params.ByName("id"))
+	data["Categories"] = models.Category{}.GetAllCategories()
 	tmp.ExecuteTemplate(w, "index", data)
 }
 func (dashboard Dashboard) Delete(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
