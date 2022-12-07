@@ -14,7 +14,7 @@ require (
 
 require (
 	github.com/gorilla/securecookie v1.1.1 // indirect
-	github.com/gorilla/sessions v1.2.1 // indirect
-	github.com/gosimple/slug v1.13.1 // indirect
+	github.com/gorilla/sessions v1.2.1 
+	github.com/gosimple/slug v1.13.1
 	github.com/gosimple/unidecode v1.0.1 // indirect
 )

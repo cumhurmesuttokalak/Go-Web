@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	admin "github.com/cumhurmesuttokalak/goweb/admin/controllers"
+	site "github.com/cumhurmesuttokalak/goweb/site/controllers"
 	"github.com/julienschmidt/httprouter"
 )
 
@@ -27,8 +28,15 @@ func Routes() *httprouter.Router {
 	r.GET("/admin/categories", admin.Category{}.Index)
 	r.POST("/admin/categories/add", admin.Category{}.Add)
 	r.GET("/admin/categories/delete/:id", admin.Category{}.Delete)
+
+	//SITE
+	//Homepage
+	r.GET("/", site.Homepage{}.Index)
+	r.GET("/yazilar/:slug", site.Homepage{}.Detail)
+
 	//ServeFiles
 	r.ServeFiles("/admin/assets/*filepath", http.Dir("admin/assets"))
+	r.ServeFiles("/site/assets/*filepath", http.Dir("site/assets"))
 	r.ServeFiles("/uploads/*filepath", http.Dir("uploads"))
 	return r
 }
