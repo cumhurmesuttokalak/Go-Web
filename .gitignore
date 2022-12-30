@@ -1,6 +1,7 @@
 #images/images
 *.jpg
 *.png
+*.jpeg
 /uploads
 
 #log
@@ -10,3 +11,6 @@ password.txt
 
 #notlar
 notlar.MD
+
+#.DS
+.DS_Store
