@@ -117,7 +117,6 @@ func (dashboard Dashboard) Update(w http.ResponseWriter, r *http.Request, params
 	is_selected := r.FormValue("is_selected")
 	var picture_url string
 	if is_selected == "1" {
-		//Upload
 		r.ParseMultipartForm(10)
 		file, header, err := r.FormFile("blog-picture")
 		if err != nil {
@@ -131,7 +130,6 @@ func (dashboard Dashboard) Update(w http.ResponseWriter, r *http.Request, params
 		if err != nil {
 			fmt.Println(err)
 		}
-		//End upload
 		picture_url = "uploads/" + header.Filename
 		os.Remove(post.Picture_url)
 	} else {

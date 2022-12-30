@@ -16,8 +16,8 @@ func Routes() *httprouter.Router {
 	r.GET("/admin/yeni-ekle", admin.Dashboard{}.NewItem)
 	r.POST("/admin/add", admin.Dashboard{}.Add)
 	r.GET("/admin/edit/:id", admin.Dashboard{}.Edit)
-	r.GET("/admin/delete/:id", admin.Dashboard{}.Delete)
-	r.POST("/admin/update/:id", admin.Dashboard{}.Update)
+	r.DELETE("/admin/delete/:id", admin.Dashboard{}.Delete)
+	r.PUT("/admin/update/:id", admin.Dashboard{}.Update)
 
 	//Userops routes
 	r.GET("/admin/login", admin.User{}.Index)

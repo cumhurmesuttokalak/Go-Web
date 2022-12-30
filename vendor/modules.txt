@@ -1,0 +1,36 @@
+# github.com/go-sql-driver/mysql v1.6.0
+## explicit; go 1.10
+github.com/go-sql-driver/mysql
+# github.com/gorilla/securecookie v1.1.1
+## explicit
+github.com/gorilla/securecookie
+# github.com/gorilla/sessions v1.2.1
+## explicit
+github.com/gorilla/sessions
+# github.com/gosimple/slug v1.13.1
+## explicit; go 1.11
+github.com/gosimple/slug
+# github.com/gosimple/unidecode v1.0.1
+## explicit; go 1.16
+github.com/gosimple/unidecode
+# github.com/jinzhu/inflection v1.0.0
+## explicit
+github.com/jinzhu/inflection
+# github.com/jinzhu/now v1.1.5
+## explicit; go 1.12
+github.com/jinzhu/now
+# github.com/julienschmidt/httprouter v1.3.0
+## explicit; go 1.7
+github.com/julienschmidt/httprouter
+# gorm.io/driver/mysql v1.4.3
+## explicit; go 1.14
+gorm.io/driver/mysql
+# gorm.io/gorm v1.24.1
+## explicit; go 1.16
+gorm.io/gorm
+gorm.io/gorm/callbacks
+gorm.io/gorm/clause
+gorm.io/gorm/logger
+gorm.io/gorm/migrator
+gorm.io/gorm/schema
+gorm.io/gorm/utils
